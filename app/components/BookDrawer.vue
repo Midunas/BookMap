@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { STATS } from '~/data/books'
+import { summaries } from '~/data/summaries'
 import { coverUrl, yearLabel, fmtDate, genreSlot, openLibraryUrl } from '~/composables/useLibrary'
 
 const { selected, select } = useLibrary()
@@ -9,6 +10,7 @@ onMounted(() => {
   window.addEventListener('keydown', onKey)
   onUnmounted(() => window.removeEventListener('keydown', onKey))
 })
+const refresher = computed(() => (selected.value ? summaries[selected.value.id] : undefined))
 const statRows = computed(() => STATS.filter(s => selected.value?.stats[s.key]).map(s => ({ ...s, pts: selected.value!.stats[s.key]! })))
 </script>
 
@@ -50,6 +52,19 @@ const statRows = computed(() => STATS.filter(s => selected.value?.stats[s.key]).
           <p class="body">{{ selected.why }}</p>
         </section>
 
+        <section v-if="refresher" class="remind">
+          <details>
+            <summary>Remind me what it was about</summary>
+            <p class="body gist">{{ refresher.gist }}</p>
+            <h4>Worth keeping</h4>
+            <ul class="ideas"><li v-for="i in refresher.ideas" :key="i">{{ i }}</li></ul>
+            <template v-if="refresher.people">
+              <h4>Who was who</h4>
+              <ul class="ideas"><li v-for="p in refresher.people" :key="p">{{ p }}</li></ul>
+            </template>
+          </details>
+        </section>
+
         <section>
           <h3>Themes</h3>
           <div class="chips"><span v-for="t in selected.themes" :key="t" class="tag">{{ t }}</span></div>
@@ -86,6 +101,15 @@ h2 { font-size: 24px; margin-top: 2px; text-transform: none; letter-spacing: -.0
 section { margin-top: 22px; }
 section h3 { font-size: 11px; color: var(--ink-2); margin-bottom: 8px; letter-spacing: .16em; font-weight: 700; }
 .body { font-size: 16px; line-height: 1.55; font-weight: 500; }
+.remind details { border: 1px solid var(--line); border-radius: var(--r-sm); padding: 0 14px; }
+.remind summary { cursor: pointer; padding: 11px 0; font-size: 13px; font-weight: 600; color: var(--accent); list-style: none; display: flex; align-items: center; gap: 8px; }
+.remind summary::-webkit-details-marker { display: none; }
+.remind summary::before { content: '+'; font-family: var(--display); font-weight: 800; font-size: 16px; line-height: 1; width: 14px; }
+.remind details[open] summary::before { content: '–'; }
+.remind details[open] summary { border-bottom: 1px dashed var(--line); }
+.gist { margin-top: 12px; font-size: 15px; }
+.remind h4 { font-size: 11px; color: var(--ink-3); margin: 16px 0 6px; letter-spacing: .14em; text-transform: uppercase; font-weight: 700; }
+.ideas { margin: 0 0 14px; padding-left: 18px; font-size: 14px; line-height: 1.5; display: flex; flex-direction: column; gap: 5px; }
 .stats { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 4px; }
 .stats li { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px dashed var(--line); font-size: 14px; }
 .pts { color: var(--accent); font-weight: 600; font-variant-numeric: tabular-nums; }
