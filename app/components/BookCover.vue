@@ -49,8 +49,8 @@ const { select } = useLibrary()
   position: absolute; top: 8px; right: -22px; transform: rotate(35deg); background: var(--line-strong); color: var(--accent-ink);
   font-size: 9px; letter-spacing: .08em; text-transform: uppercase; padding: 2px 26px; font-weight: 600;
 }
-.ribbon.now { background: var(--g-2); color: #fff; padding-inline: 18px; right: -26px; }
-.reading .cov { outline: 2px solid var(--g-2); }
+.ribbon.now { background: var(--now); color: #fff; padding-inline: 18px; right: -26px; }
+.reading .cov { outline: 2px solid var(--now); }
 .stars { position: absolute; left: 6px; bottom: 5px; font-size: 10px; color: #fff; text-shadow: 0 1px 3px rgba(0,0,0,.7); letter-spacing: -.5px; }
 .cap { display: flex; flex-direction: column; gap: 1px; }
 .ct { font-size: 13px; line-height: 1.3; font-weight: 500; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }

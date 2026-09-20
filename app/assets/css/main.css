@@ -17,9 +17,11 @@
   --bar-ink: var(--ink);
   --shadow: none;
 
-  /* categorical (validated, fixed order = GENRES order) */
-  --g-1: #2f6fb0; --g-2: #d4572a; --g-3: #1a9e7c; --g-4: #d99a00;
-  --g-5: #c85a8a; --g-6: #3f8a1f; --g-7: #6a48c4; --g-8: #b5473c;
+  /* categorical (validated, fixed order = GENRES order). Muted OKLCH C≈.115, L alternating .48/.60 */
+  --g-1: #923e4f; --g-2: #4e82c3; --g-3: #91451e; --g-4: #00967c;
+  --g-5: #634e97; --g-6: #a07a1a; --g-7: #81437c; --g-8: #59914d;
+  /* semantic accents: reading-now ribbon, rating deltas */
+  --now: #b36139; --pos: #59914d; --neg: #923e4f;
   /* sequential (map) one hue light→dark, paper → slate */
   --seq-0: #e4e1d5; --seq-1: #cfd0d8; --seq-2: #b0b3c4; --seq-3: #8e93ab; --seq-4: #6b7190; --seq-5: #454a63;
   --want: #b3b5bf;
@@ -38,8 +40,9 @@
     --ink: #eeebe1; --ink-2: #c3c4cf; --ink-3: #979bb0;
     --accent: #eeebe1; --accent-ink: #3f4459;
     --bar: #2f3346; --bar-ink: #eeebe1;
-    --g-1: #3987e5; --g-2: #d95926; --g-3: #199e70; --g-4: #c98500;
-    --g-5: #d55181; --g-6: #008300; --g-7: #9085e9; --g-8: #e66767;
+    --g-1: #c26576; --g-2: #5f96dc; --g-3: #c16d45; --g-4: #1dab8f;
+    --g-5: #8c76c6; --g-6: #b58d2d; --g-7: #ae6aa8; --g-8: #6aa65d;
+    --now: #c16d45; --pos: #6aa65d; --neg: #c26576;
     --seq-0: #363a4d; --seq-1: #4d5269; --seq-2: #676d87; --seq-3: #8a90a8; --seq-4: #b3b7c9; --seq-5: #e6e4dc;
     --want: #6f7389;
     --grain: .12;
@@ -51,8 +54,9 @@
   --ink: #eeebe1; --ink-2: #c3c4cf; --ink-3: #979bb0;
   --accent: #eeebe1; --accent-ink: #3f4459;
   --bar: #2f3346; --bar-ink: #eeebe1;
-  --g-1: #3987e5; --g-2: #d95926; --g-3: #199e70; --g-4: #c98500;
-  --g-5: #d55181; --g-6: #008300; --g-7: #9085e9; --g-8: #e66767;
+  --g-1: #c26576; --g-2: #5f96dc; --g-3: #c16d45; --g-4: #1dab8f;
+  --g-5: #8c76c6; --g-6: #b58d2d; --g-7: #ae6aa8; --g-8: #6aa65d;
+  --now: #c16d45; --pos: #6aa65d; --neg: #c26576;
   --seq-0: #363a4d; --seq-1: #4d5269; --seq-2: #676d87; --seq-3: #8a90a8; --seq-4: #b3b7c9; --seq-5: #e6e4dc;
   --want: #6f7389;
   --grain: .12;

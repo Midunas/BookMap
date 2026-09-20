@@ -130,7 +130,7 @@ th { text-align: left; font-size: 11px; text-transform: uppercase; letter-spacin
 td { padding: 9px 8px; border-bottom: 1px solid var(--line); }
 tr:last-child td { border-bottom: 0; }
 .num { text-align: right; font-variant-numeric: tabular-nums; }
-.pos { color: var(--g-6); font-weight: 600; } .neg { color: var(--g-8); font-weight: 600; }
+.pos { color: var(--pos); font-weight: 600; } .neg { color: var(--neg); font-weight: 600; }
 th:not(:first-child) { text-align: right; }
 .lnk { padding: 0; text-align: left; }
 .lnk:hover { color: var(--accent); }
