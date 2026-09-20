@@ -81,7 +81,7 @@ const tip = ref<{ x: number; y: number; b: Book } | null>(null)
 .era { display: grid; grid-template-columns: 160px 1fr; gap: 24px; padding: 26px 0; border-top: 1px solid var(--line); }
 @media (max-width: 720px) { .era { grid-template-columns: 1fr; gap: 12px; } }
 .lbl { position: sticky; top: 74px; align-self: start; }
-.lbl h2 { font-size: 24px; }
+.lbl h2 { font-size: 22px; }
 .books { display: grid; grid-template-columns: repeat(auto-fill, minmax(112px, 1fr)); gap: 18px 14px; }
 .tb { display: flex; flex-direction: column; gap: 4px; }
 .yr { font-variant-numeric: tabular-nums; }
