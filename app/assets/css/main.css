@@ -36,29 +36,29 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     color-scheme: dark;
-    --bg: #3f4459; --bg-2: #363a4d; --card: #474c63; --line: rgba(238, 235, 225, .28); --line-strong: #eeebe1;
+    --bg: #33364a; --bg-2: #2b2e3f; --card: #3c4054; --line: rgba(238, 235, 225, .24); --line-strong: #eeebe1;
     --ink: #eeebe1; --ink-2: #c3c4cf; --ink-3: #979bb0;
-    --accent: #eeebe1; --accent-ink: #3f4459;
-    --bar: #2f3346; --bar-ink: #eeebe1;
+    --accent: #eeebe1; --accent-ink: #33364a;
+    --bar: #2b2e3f; --bar-ink: #eeebe1;
     --g-1: #c26576; --g-2: #5f96dc; --g-3: #c16d45; --g-4: #1dab8f;
     --g-5: #8c76c6; --g-6: #b58d2d; --g-7: #ae6aa8; --g-8: #6aa65d;
     --now: #c16d45; --pos: #6aa65d; --neg: #c26576;
-    --seq-0: #363a4d; --seq-1: #4d6b91; --seq-2: #6588b6; --seq-3: #83a7d6; --seq-4: #aac7eb; --seq-5: #d4e3f6;
-    --want: #6f7389;
+    --seq-0: #2b2e3f; --seq-1: #4d6b91; --seq-2: #6588b6; --seq-3: #83a7d6; --seq-4: #aac7eb; --seq-5: #d4e3f6;
+    --want: #6a6f88;
     --grain: .12;
   }
 }
 :root[data-theme="dark"] {
   color-scheme: dark;
-  --bg: #3f4459; --bg-2: #363a4d; --card: #474c63; --line: rgba(238, 235, 225, .28); --line-strong: #eeebe1;
+  --bg: #33364a; --bg-2: #2b2e3f; --card: #3c4054; --line: rgba(238, 235, 225, .24); --line-strong: #eeebe1;
   --ink: #eeebe1; --ink-2: #c3c4cf; --ink-3: #979bb0;
-  --accent: #eeebe1; --accent-ink: #3f4459;
-  --bar: #2f3346; --bar-ink: #eeebe1;
+  --accent: #eeebe1; --accent-ink: #33364a;
+  --bar: #2b2e3f; --bar-ink: #eeebe1;
   --g-1: #c26576; --g-2: #5f96dc; --g-3: #c16d45; --g-4: #1dab8f;
   --g-5: #8c76c6; --g-6: #b58d2d; --g-7: #ae6aa8; --g-8: #6aa65d;
   --now: #c16d45; --pos: #6aa65d; --neg: #c26576;
-  --seq-0: #363a4d; --seq-1: #4d6b91; --seq-2: #6588b6; --seq-3: #83a7d6; --seq-4: #aac7eb; --seq-5: #d4e3f6;
-  --want: #6f7389;
+  --seq-0: #2b2e3f; --seq-1: #4d6b91; --seq-2: #6588b6; --seq-3: #83a7d6; --seq-4: #aac7eb; --seq-5: #d4e3f6;
+  --want: #6a6f88;
   --grain: .12;
 }
 
