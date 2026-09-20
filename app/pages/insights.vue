@@ -27,7 +27,7 @@ const grAvg = computed(() => avg(read.value.map(b => b.avgRating)))
 const rated = computed(() => [...read.value].filter(b => b.myRating).sort((a, b) => (b.myRating! - b.avgRating) - (a.myRating! - a.avgRating)))
 const themeCounts = computed(() => groupBy(read.value.flatMap(b => b.themes.map(t => ({ t, b }))), x => x.t).sort((a, b) => b.items.length - a.items.length).slice(0, 18))
 const byId = (id: string) => books.find(b => b.id === id)!
-const women = computed(() => ['jane-austen', 'toni-morrison', 'barbara-kingsolver', 'betty-smith', 'laura-hillenbrand', 'sohn-won-pyung', 'madeline-cash'])
+const women = computed(() => ['jane-austen', 'toni-morrison', 'barbara-kingsolver', 'betty-smith', 'laura-hillenbrand', 'sohn-won-pyung', 'madeline-cash', 'yaa-gyasi', 'min-jin-lee', 'doris-kearns-goodwin', 'marguerite-yourcenar', 'barbara-tuchman'])
 const womenRead = computed(() => read.value.filter(b => women.value.includes(b.authorId)).length)
 </script>
 
