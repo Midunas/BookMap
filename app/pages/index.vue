@@ -2,7 +2,7 @@
 import type { Book } from '~/data/books'
 import { yearLabel } from '~/composables/useLibrary'
 
-const { filtered, read, want, books, status } = useLibrary()
+const { filtered, read, want, reading, books, status, select } = useLibrary()
 const sort = ref<'added' | 'title' | 'author' | 'year' | 'rating'>('added')
 const sorted = computed(() => {
   const xs = [...filtered.value]
@@ -38,7 +38,10 @@ useHead({ title: 'BookMap · Shelf' })
       </div>
     </section>
 
-    <p v-if="latest" class="latest small muted">Most recently finished: <button class="lnk" @click="useLibrary().select(latest)">{{ latest.title }}</button> by {{ latest.author }}.</p>
+    <p class="latest small muted">
+      <template v-if="reading.length"><b>Reading now:</b> <button v-for="b in reading" :key="b.id" class="lnk" @click="select(b)">{{ b.title }}</button> by {{ reading[0].author }}. </template>
+      <template v-if="latest">Most recently finished: <button class="lnk" @click="select(latest)">{{ latest.title }}</button> by {{ latest.author }}.</template>
+    </p>
 
     <div class="controls">
       <StatusBar />
