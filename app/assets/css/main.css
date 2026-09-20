@@ -33,34 +33,6 @@
   --r-sm: 8px;
   --grain: .22;
 }
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    color-scheme: dark;
-    --bg: #33364a; --bg-2: #2b2e3f; --card: #3c4054; --line: rgba(238, 235, 225, .24); --line-strong: #eeebe1;
-    --ink: #eeebe1; --ink-2: #c3c4cf; --ink-3: #979bb0;
-    --accent: #eeebe1; --accent-ink: #33364a;
-    --bar: #2b2e3f; --bar-ink: #eeebe1;
-    --g-1: #c26576; --g-2: #5f96dc; --g-3: #c16d45; --g-4: #1dab8f;
-    --g-5: #8c76c6; --g-6: #b58d2d; --g-7: #ae6aa8; --g-8: #6aa65d;
-    --now: #c16d45; --pos: #6aa65d; --neg: #c26576;
-    --seq-0: #2b2e3f; --seq-1: #4d6b91; --seq-2: #6588b6; --seq-3: #83a7d6; --seq-4: #aac7eb; --seq-5: #d4e3f6;
-    --want: #6a6f88;
-    --grain: .12;
-  }
-}
-:root[data-theme="dark"] {
-  color-scheme: dark;
-  --bg: #33364a; --bg-2: #2b2e3f; --card: #3c4054; --line: rgba(238, 235, 225, .24); --line-strong: #eeebe1;
-  --ink: #eeebe1; --ink-2: #c3c4cf; --ink-3: #979bb0;
-  --accent: #eeebe1; --accent-ink: #33364a;
-  --bar: #2b2e3f; --bar-ink: #eeebe1;
-  --g-1: #c26576; --g-2: #5f96dc; --g-3: #c16d45; --g-4: #1dab8f;
-  --g-5: #8c76c6; --g-6: #b58d2d; --g-7: #ae6aa8; --g-8: #6aa65d;
-  --now: #c16d45; --pos: #6aa65d; --neg: #c26576;
-  --seq-0: #2b2e3f; --seq-1: #4d6b91; --seq-2: #6588b6; --seq-3: #83a7d6; --seq-4: #aac7eb; --seq-5: #d4e3f6;
-  --want: #6a6f88;
-  --grain: .12;
-}
 
 /* ───────── base ───────── */
 *, *::before, *::after { box-sizing: border-box; }
@@ -77,8 +49,6 @@ body::before {
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .9 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
   background-size: 300px 300px;
 }
-:root[data-theme="dark"] body::before { mix-blend-mode: screen; }
-@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) body::before { mix-blend-mode: screen; } }
 a { color: inherit; }
 button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
 img { display: block; max-width: 100%; }
