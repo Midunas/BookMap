@@ -44,7 +44,8 @@ export function groupBy<T>(list: T[], key: (t: T) => string) {
 
 export const avg = (xs: number[]) => (xs.length ? xs.reduce((a, b) => a + b, 0) / xs.length : 0)
 
-export type StatusFilter = 'all' | 'read' | 'want'
+export type StatusFilter = 'all' | 'read' | 'want' | 'reading' | 'must'
+export const MUST_READ_MIN = 4.0
 
 export function useLibrary() {
   const status = useState<StatusFilter>('bm-status', () => 'all')
@@ -53,11 +54,14 @@ export function useLibrary() {
 
   const read = computed(() => books.filter(b => b.status === 'read'))
   const want = computed(() => books.filter(b => b.status === 'want'))
+  const reading = computed(() => books.filter(b => b.status === 'reading'))
+  const must = computed(() => books.filter(b => b.status !== 'read' && b.avgRating >= MUST_READ_MIN))
 
   const filtered = computed(() => {
     const q = query.value.trim().toLowerCase()
     return books.filter(b => {
-      if (status.value !== 'all' && b.status !== status.value) return false
+      if (status.value === 'must') { if (b.status === 'read' || b.avgRating < MUST_READ_MIN) return false }
+      else if (status.value !== 'all' && b.status !== status.value) return false
       if (!q) return true
       return [b.title, b.author, b.country, b.genre, b.form, b.language, ...b.themes].join(' ').toLowerCase().includes(q)
     })
@@ -65,7 +69,7 @@ export function useLibrary() {
 
   const select = (b: Book | null) => { selected.value = b }
 
-  return { books, read, want, filtered, status, query, selected, select }
+  return { books, read, want, reading, must, filtered, status, query, selected, select }
 }
 
 /* ───────── gamification ───────── */
@@ -81,7 +85,7 @@ export const levelFor = (points: number) => Math.floor(Math.sqrt(points))
 
 export function useCharacter() {
   const read = books.filter(b => b.status === 'read')
-  const want = books.filter(b => b.status === 'want')
+  const want = books.filter(b => b.status !== 'read')
 
   const stats: StatLevel[] = STATS.map(s => {
     const points = read.reduce((a, b) => a + (b.stats[s.key] ?? 0), 0)
