@@ -7,7 +7,7 @@ const { books, read, want, select } = useLibrary()
 useHead({ title: 'BookMap · Insights' })
 
 const rows = (key: (b: Book) => string, order?: string[]) => {
-  const r = groupBy(read.value, key), w = groupBy(want.value, key)
+  const r = groupBy(read.value, key), w = groupBy(books.filter(b => b.status !== 'read'), key)
   const names = order ?? [...new Set([...r.map(g => g.name), ...w.map(g => g.name)])]
   const out = names.map(n => ({ label: n, a: r.find(g => g.name === n)?.items.length ?? 0, b: w.find(g => g.name === n)?.items.length ?? 0 }))
   return order ? out : out.sort((x, y) => y.a + y.b - (x.a + x.b))
