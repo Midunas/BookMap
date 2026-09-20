@@ -23,6 +23,8 @@ export type Form =
   | 'Guide'
   | 'Conversation'
   | 'Workbook'
+  | 'History'
+  | 'Biography'
 
 export type StatKey = 'empathy' | 'resilience' | 'thinking' | 'wealth' | 'craft' | 'imagination'
 
@@ -547,5 +549,119 @@ export const books: Book[] = [
     status: 'want', avgRating: 4.13, dateAdded: '2026-08-13', pages: 272,
     stats: { empathy: 3 },
     why: 'A boy who cannot feel emotions learns empathy from the outside in. Literally a book about the empathy stat.',
+  },
+
+  // ───────────── MUST READS (added 2026-09-20, all 4.0+ on Goodreads) ─────────────
+  {
+    id: 'shoe-dog', title: 'Shoe Dog', author: 'Phil Knight', authorId: 'phil-knight',
+    country: 'United States', place: 'Portland, Oregon', lat: 45.5152, lng: -122.6784, language: 'English', year: 2016,
+    genre: 'Memoir & Biography', form: 'Memoir', themes: ['entrepreneurship', 'craft', 'persistence', 'Nike'],
+    status: 'want', avgRating: 4.45, dateAdded: '2026-09-20', pages: 386,
+    stats: { wealth: 3, craft: 2, resilience: 1 },
+    why: 'The best Wealth-plus-Craft memoir going: a decade of near-bankruptcy before Nike became Nike. Levels my two weakest stats at once. Saved for a lighter mood.',
+  },
+  {
+    id: 'endurance', title: "Endurance: Shackleton's Incredible Voyage", author: 'Alfred Lansing', authorId: 'alfred-lansing',
+    country: 'United States', place: 'Chicago', lat: 41.8781, lng: -87.6298, language: 'English', year: 1959,
+    genre: 'Historical & War', form: 'History', themes: ['survival', 'leadership', 'Antarctica', 'endurance'],
+    status: 'want', avgRating: 4.40, dateAdded: '2026-09-20', pages: 357,
+    stats: { resilience: 3, empathy: 1 },
+    why: 'Twenty-eight men, a crushed ship, two years on the ice, nobody dies. The book people who love Unbroken read next.',
+  },
+  {
+    id: 'homegoing', title: 'Homegoing', author: 'Yaa Gyasi', authorId: 'yaa-gyasi',
+    country: 'Ghana', place: 'Mampong', lat: 7.0631, lng: -1.4001, language: 'English', year: 2016,
+    genre: 'Historical & War', form: 'Novel', themes: ['slavery', 'family', 'Ghana', 'inheritance'],
+    status: 'want', avgRating: 4.42, dateAdded: '2026-09-20', pages: 305,
+    stats: { empathy: 3, thinking: 2 },
+    why: 'Two half-sisters in 18th-century Ghana, then eight generations split between the Gold Coast and America. East of Eden across an ocean, and Africa on my map.',
+  },
+  {
+    id: 'pillars-of-the-earth', title: 'The Pillars of the Earth', author: 'Ken Follett', authorId: 'ken-follett',
+    country: 'United Kingdom', place: 'Cardiff, Wales', lat: 51.4816, lng: -3.1791, language: 'English', year: 1989,
+    genre: 'Historical & War', form: 'Novel', themes: ['building', 'craft', 'the Middle Ages', 'ambition'],
+    status: 'want', avgRating: 4.34, dateAdded: '2026-09-20', pages: 973,
+    stats: { craft: 3, imagination: 2, empathy: 1 },
+    why: 'Fifty years of building one cathedral. Pure Craft stat, a Doorstopper, and reportedly the easiest thousand pages ever written.',
+  },
+  {
+    id: 'pachinko', title: 'Pachinko', author: 'Min Jin Lee', authorId: 'min-jin-lee',
+    country: 'South Korea', place: 'Seoul', lat: 37.5665, lng: 126.978, language: 'English', year: 2017,
+    genre: 'Historical & War', form: 'Novel', themes: ['immigration', 'family', 'Korea', 'Japan', 'belonging'],
+    status: 'want', avgRating: 4.29, dateAdded: '2026-09-20', pages: 490,
+    stats: { empathy: 3, resilience: 2 },
+    why: 'Four generations of a Korean family in Japan. Pairs with Almond and Shōgun, and adds Korea to the read map.',
+  },
+  {
+    id: 'team-of-rivals', title: 'Team of Rivals', author: 'Doris Kearns Goodwin', authorId: 'doris-kearns-goodwin',
+    country: 'United States', place: 'Brooklyn, New York', lat: 40.6782, lng: -73.9442, language: 'English', year: 2005,
+    genre: 'Memoir & Biography', form: 'Biography', themes: ['Lincoln', 'leadership', 'politics', 'the Civil War'],
+    status: 'want', avgRating: 4.29, dateAdded: '2026-09-20', pages: 916,
+    stats: { thinking: 3, empathy: 2 },
+    why: 'Lincoln puts the men who ran against him in his own cabinet, then manages them through a war. Thinking and Empathy in one book.',
+  },
+  {
+    id: 'killer-angels', title: 'The Killer Angels', author: 'Michael Shaara', authorId: 'michael-shaara',
+    country: 'United States', place: 'Jersey City, New Jersey', lat: 40.7178, lng: -74.0431, language: 'English', year: 1974,
+    genre: 'Historical & War', form: 'Novel', themes: ['Gettysburg', 'duty', 'the Civil War', 'command'],
+    status: 'want', avgRating: 4.30, dateAdded: '2026-09-20', pages: 355,
+    stats: { thinking: 2, resilience: 2, empathy: 1 },
+    why: 'Four days at Gettysburg from inside the heads of the generals. Pulitzer winner and the model for every battle novel since.',
+  },
+  {
+    id: 'memoirs-of-hadrian', title: 'Memoirs of Hadrian', author: 'Marguerite Yourcenar', authorId: 'marguerite-yourcenar',
+    country: 'Belgium', place: 'Brussels', lat: 50.8503, lng: 4.3517, language: 'French', year: 1951,
+    genre: 'Historical & War', form: 'Novel', themes: ['Rome', 'power', 'mortality', 'love'],
+    status: 'reading', avgRating: 4.23, dateAdded: '2026-09-20', pages: 347,
+    stats: { resilience: 3, thinking: 2 },
+    why: 'Starting now. A dying emperor writes to the young Marcus Aurelius: the direct ancestor of Meditations, serious without being a doorstop. Also my first woman author.',
+  },
+  {
+    id: 'blood-meridian', title: 'Blood Meridian', author: 'Cormac McCarthy', authorId: 'cormac-mccarthy',
+    country: 'United States', place: 'Providence, Rhode Island', lat: 41.824, lng: -71.4128, language: 'English', year: 1985,
+    genre: 'Historical & War', form: 'Novel', themes: ['violence', 'the West', 'evil', 'the borderlands'],
+    status: 'want', avgRating: 4.19, dateAdded: '2026-09-20', pages: 351,
+    stats: { thinking: 2, imagination: 2, resilience: 1 },
+    why: 'The dark twin of Lonesome Dove, and the closest thing in English to the violence chapters of 2666.',
+  },
+  {
+    id: 'titan', title: 'Titan: The Life of John D. Rockefeller, Sr.', author: 'Ron Chernow', authorId: 'ron-chernow',
+    country: 'United States', place: 'Brooklyn, New York', lat: 40.6782, lng: -73.9442, language: 'English', year: 1998,
+    genre: 'Memoir & Biography', form: 'Biography', themes: ['wealth', 'monopoly', 'philanthropy', 'discipline'],
+    status: 'want', avgRating: 4.22, dateAdded: '2026-09-20', pages: 832,
+    stats: { wealth: 3, thinking: 2 },
+    why: 'How the richest man in history actually did it, ledger by ledger. The Wealth book that is also real history, and a correction to Kiyosaki.',
+  },
+  {
+    id: 'war-and-peace', title: 'War and Peace', author: 'Leo Tolstoy', authorId: 'leo-tolstoy',
+    country: 'Russia', place: 'Yasnaya Polyana, Tula', lat: 54.0694, lng: 37.5231, language: 'Russian', year: 1869,
+    genre: 'Historical & War', form: 'Novel', themes: ['Napoleon', 'family', 'fate', 'history'],
+    status: 'want', avgRating: 4.14, dateAdded: '2026-09-20', pages: 1225,
+    stats: { empathy: 3, thinking: 3, resilience: 1 },
+    why: 'The Russian historical novel proper. After Crime and Punishment this is the other mountain, and it earns Doorstopper twice over.',
+  },
+  {
+    id: 'guns-of-august', title: 'The Guns of August', author: 'Barbara W. Tuchman', authorId: 'barbara-tuchman',
+    country: 'United States', place: 'New York', lat: 40.7128, lng: -74.006, language: 'English', year: 1962,
+    genre: 'Historical & War', form: 'History', themes: ['WWI', 'decisions', 'diplomacy', 'hubris'],
+    status: 'want', avgRating: 4.15, dateAdded: '2026-09-20', pages: 511,
+    stats: { thinking: 3 },
+    why: 'How the First World War started in one month of confident bad decisions. Reads like a thriller, and sets up All Quiet on the Western Front.',
+  },
+  {
+    id: 'i-claudius', title: 'I, Claudius', author: 'Robert Graves', authorId: 'robert-graves',
+    country: 'United Kingdom', place: 'Wimbledon, London', lat: 51.4214, lng: -0.2064, language: 'English', year: 1934,
+    genre: 'Historical & War', form: 'Novel', themes: ['Rome', 'power', 'survival', 'family'],
+    status: 'want', avgRating: 4.11, dateAdded: '2026-09-20', pages: 468,
+    stats: { thinking: 3, imagination: 1 },
+    why: 'The stammering fool who outlives every schemer in the Julio-Claudian family. Roman power politics, told with a wink.',
+  },
+  {
+    id: 'wright-brothers', title: 'The Wright Brothers', author: 'David McCullough', authorId: 'david-mccullough',
+    country: 'United States', place: 'Pittsburgh, Pennsylvania', lat: 40.4406, lng: -79.9959, language: 'English', year: 2015,
+    genre: 'Memoir & Biography', form: 'Biography', themes: ['invention', 'craft', 'brothers', 'persistence'],
+    status: 'want', avgRating: 4.13, dateAdded: '2026-09-20', pages: 320,
+    stats: { craft: 3, resilience: 1 },
+    why: 'Two bicycle mechanics out-engineer every funded lab in the world. Craft as patience, measured in wind-tunnel hours.',
   },
 ]
