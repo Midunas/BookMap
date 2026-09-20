@@ -22,7 +22,7 @@ const statRows = computed(() => STATS.filter(s => selected.value?.stats[s.key]).
             <img v-if="coverUrl(selected, 'M')" :src="coverUrl(selected, 'M')!" :alt="`Cover of ${selected.title}`" />
           </div>
           <div>
-            <p class="eyebrow">{{ selected.status === 'read' ? 'Read' : 'Want to read' }}<template v-if="selected.series"> · {{ selected.series }}</template></p>
+            <p class="eyebrow">{{ selected.status === 'read' ? 'Read' : selected.status === 'reading' ? 'Reading now' : 'Want to read' }}<template v-if="selected.series"> · {{ selected.series }}</template></p>
             <h2>{{ selected.title }}</h2>
             <p class="muted by">{{ selected.author }}</p>
             <p class="small faint">{{ selected.place }}, {{ selected.country }} · first published {{ yearLabel(selected.year) }} · {{ selected.language }}</p>
@@ -46,7 +46,7 @@ const statRows = computed(() => STATS.filter(s => selected.value?.stats[s.key]).
           <p class="body">{{ selected.takeaway }}</p>
         </section>
         <section v-else-if="selected.why">
-          <h3>Why it is on the list</h3>
+          <h3>{{ selected.status === 'reading' ? 'Why I picked it up' : 'Why it is on the list' }}</h3>
           <p class="body">{{ selected.why }}</p>
         </section>
 
