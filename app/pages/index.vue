@@ -66,7 +66,7 @@ useHead({ title: 'BookMap · Shelf' })
 @media (max-width: 800px) { .hero { grid-template-columns: 1fr; } }
 .hero .lede { margin-top: 12px; }
 .hero-tiles { grid-template-columns: repeat(2, 1fr); }
-.tile .span { font-size: 22px; padding-top: 8px; }
+.tile .span { font-size: 20px; padding-top: 10px; }
 .latest { margin-bottom: 18px; }
 .lnk { color: var(--accent); text-decoration: underline; padding: 0; }
 .controls { display: flex; flex-wrap: wrap; gap: 10px 20px; align-items: flex-start; }
