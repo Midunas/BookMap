@@ -9,7 +9,7 @@ const { select } = useLibrary()
 </script>
 
 <template>
-  <button class="bk" :class="{ dim, want: book.status === 'want' }" :title="`${book.title} · ${book.author}`" @click="select(book)">
+  <button class="bk" :class="{ dim, want: book.status === 'want', reading: book.status === 'reading' }" :title="`${book.title} · ${book.author}`" @click="select(book)">
     <span class="cov" :class="`s-${genreSlot(book.genre)}`">
       <img v-if="src" :src="src" :alt="`Cover of ${book.title}`" loading="lazy" @error="failed = true" />
       <span v-else class="fallback">
@@ -17,6 +17,7 @@ const { select } = useLibrary()
         <span class="a">{{ book.author }}</span>
       </span>
       <span v-if="caption && book.status === 'want'" class="ribbon">to read</span>
+      <span v-if="caption && book.status === 'reading'" class="ribbon now">reading now</span>
       <span v-if="caption && book.myRating" class="stars">{{ '★'.repeat(book.myRating) }}</span>
     </span>
     <span v-if="caption" class="cap">
@@ -48,6 +49,8 @@ const { select } = useLibrary()
   position: absolute; top: 8px; right: -22px; transform: rotate(35deg); background: var(--line-strong); color: var(--accent-ink);
   font-size: 9px; letter-spacing: .08em; text-transform: uppercase; padding: 2px 26px; font-weight: 600;
 }
+.ribbon.now { background: var(--g-2); color: #fff; padding-inline: 18px; right: -26px; }
+.reading .cov { outline: 2px solid var(--g-2); }
 .stars { position: absolute; left: 6px; bottom: 5px; font-size: 10px; color: #fff; text-shadow: 0 1px 3px rgba(0,0,0,.7); letter-spacing: -.5px; }
 .cap { display: flex; flex-direction: column; gap: 1px; }
 .ct { font-size: 13px; line-height: 1.3; font-weight: 500; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
