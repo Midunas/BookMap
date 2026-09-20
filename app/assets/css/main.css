@@ -13,8 +13,8 @@
   --ink-3: #8f94aa;
   --accent: #5e6480;
   --accent-ink: #eeebe1;
-  --bar: #5e6480;          /* header bar */
-  --bar-ink: #eeebe1;
+  --bar: var(--paper);     /* header bar sits on the paper */
+  --bar-ink: var(--ink);
   --shadow: none;
 
   /* categorical (validated, fixed order = GENRES order) */
