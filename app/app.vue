@@ -44,18 +44,18 @@ useHead({ script: [{ innerHTML: `try{var t=localStorage.getItem('bm-theme');if(t
 </template>
 
 <style scoped>
-.hdr { position: sticky; top: 0; z-index: 30; background: color-mix(in oklab, var(--bg) 88%, transparent); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+.hdr { position: sticky; top: 0; z-index: 30; background: var(--bar); color: var(--bar-ink); }
 .row { display: flex; align-items: center; gap: 18px; height: 58px; }
-.brand { display: inline-flex; align-items: center; gap: 10px; font-family: var(--serif); font-size: 20px; text-decoration: none; font-weight: 500; }
-.mark { width: 18px; height: 22px; border-radius: 3px; background: var(--accent); position: relative; }
-.mark::after { content: ''; position: absolute; left: 5px; right: 5px; top: 5px; height: 2px; background: var(--accent-ink); box-shadow: 0 4px 0 var(--accent-ink); }
+.brand { display: inline-flex; align-items: center; gap: 10px; font-family: var(--display); font-size: 17px; text-decoration: none; font-weight: 900; text-transform: uppercase; letter-spacing: .02em; font-stretch: 112%; }
+.mark { width: 22px; height: 22px; border-radius: 50%; background: var(--paper); position: relative; box-shadow: inset 0 0 0 .5px rgba(0,0,0,.35); }
+.mark::after { content: ''; position: absolute; right: -6px; top: -3px; width: 5px; height: 5px; border-radius: 50%; background: var(--paper); }
 .nav { display: flex; gap: 2px; margin-left: auto; overflow-x: auto; scrollbar-width: none; }
 .nav::-webkit-scrollbar { display: none; }
-.nl { text-decoration: none; padding: 6px 11px; border-radius: 999px; color: var(--ink-2); font-size: 14px; white-space: nowrap; }
-.nl:hover { color: var(--ink); background: var(--bg-2); }
-.nl.router-link-exact-active { color: var(--ink); background: var(--card); box-shadow: inset 0 0 0 1px var(--line); }
-.theme { font-size: 18px; color: var(--ink-2); padding: 4px 8px; border-radius: 999px; }
-.theme:hover { color: var(--ink); background: var(--bg-2); }
+.nl { text-decoration: none; padding: 6px 12px; border-radius: 999px; color: var(--bar-ink); opacity: .78; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; white-space: nowrap; }
+.nl:hover { opacity: 1; background: rgba(238, 235, 225, .12); }
+.nl.router-link-exact-active { opacity: 1; background: var(--paper); color: #474c64; }
+.theme { font-size: 18px; color: var(--bar-ink); padding: 4px 8px; border-radius: 999px; opacity: .8; }
+.theme:hover { opacity: 1; background: rgba(238, 235, 225, .12); }
 .ftr { padding: 30px 0 40px; border-top: 1px solid var(--line); margin-top: 20px; }
 @media (max-width: 640px) {
   .row { flex-wrap: wrap; height: auto; padding: 10px 0; row-gap: 6px; }
