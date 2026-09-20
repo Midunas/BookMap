@@ -106,7 +106,7 @@ const xpPct = computed(() => {
 <style scoped>
 .xp { padding: 18px 22px; }
 .xp-row { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
-.xp-row b { font-family: var(--serif); font-size: 22px; font-weight: 500; }
+.xp-row b { font-family: var(--display); font-size: 22px; font-weight: 900; }
 .bar { height: 10px; border-radius: 999px; background: var(--bg-2); overflow: hidden; }
 .bar span { display: block; height: 100%; background: var(--accent); border-radius: 999px; transition: width .6s cubic-bezier(.2,.8,.2,1); }
 .facts { display: flex; gap: 18px; flex-wrap: wrap; margin-top: 12px; }
@@ -114,7 +114,7 @@ const xpPct = computed(() => {
 .stat { padding: 18px 20px; }
 .stat header { display: flex; justify-content: space-between; gap: 14px; margin-bottom: 12px; }
 .lvl { text-align: center; line-height: 1; }
-.lvl .n { display: block; font-family: var(--serif); font-size: 36px; }
+.lvl .n { display: block; font-family: var(--display); font-weight: 900; font-size: 38px; letter-spacing: -.03em; }
 .pts { display: flex; justify-content: space-between; margin-top: 6px; }
 .src { margin-top: 14px; display: flex; flex-direction: column; gap: 6px; }
 .minis { display: flex; gap: 6px; }
@@ -124,12 +124,12 @@ const xpPct = computed(() => {
 .badge.locked { opacity: .78; }
 .seal { flex: none; width: 46px; height: 46px; border-radius: 50%; background: var(--accent); color: var(--accent-ink); display: grid; place-items: center; font-weight: 600; font-size: 13px; font-variant-numeric: tabular-nums; }
 .locked .seal { background: var(--bg-2); color: var(--ink-2); border: 1px dashed var(--ink-3); }
-.badge h3 { font-size: 16px; }
+.badge h3 { font-size: 14px; }
 .hint { margin-top: 6px; color: var(--accent); }
 .quests { list-style: none; margin: 20px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 12px; }
 .quest { display: flex; gap: 14px; padding: 14px; align-items: flex-start; }
 .qc { width: 58px; flex: none; }
-.qt { font-family: var(--serif); font-size: 18px; text-align: left; padding: 0; line-height: 1.2; }
+.qt { font-family: var(--display); font-weight: 700; font-size: 17px; text-align: left; padding: 0; line-height: 1.2; }
 .qt:hover { color: var(--accent); }
 .grant { margin-top: 6px; color: var(--accent); }
 </style>
