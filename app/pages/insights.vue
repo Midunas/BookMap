@@ -122,15 +122,15 @@ const womenRead = computed(() => read.value.filter(b => women.value.includes(b.a
 .thread { padding: 18px 20px 20px; }
 .tcovers { display: flex; gap: 6px; margin-bottom: 14px; }
 .mini { width: 44px; }
-.thread h3 { font-size: 20px; margin-bottom: 8px; }
-.ttext { font-family: var(--serif); font-size: 16px; line-height: 1.5; color: var(--ink); }
+.thread h3 { font-size: 18px; margin-bottom: 8px; letter-spacing: -.01em; }
+.ttext { font-size: 15px; line-height: 1.55; color: var(--ink); }
 .tbl { padding: 6px 18px; margin-top: 20px; overflow-x: auto; }
 table { width: 100%; border-collapse: collapse; font-size: 14px; }
 th { text-align: left; font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: var(--ink-3); padding: 10px 8px 8px; border-bottom: 1px solid var(--line); }
 td { padding: 9px 8px; border-bottom: 1px solid var(--line); }
 tr:last-child td { border-bottom: 0; }
 .num { text-align: right; font-variant-numeric: tabular-nums; }
-.pos { color: var(--g-6); } .neg { color: var(--g-8); }
+.pos { color: var(--g-6); font-weight: 600; } .neg { color: var(--g-8); font-weight: 600; }
 th:not(:first-child) { text-align: right; }
 .lnk { padding: 0; text-align: left; }
 .lnk:hover { color: var(--accent); }
