@@ -30,23 +30,22 @@ const { select } = useLibrary()
 .bk { display: flex; flex-direction: column; gap: 8px; text-align: left; padding: 0; width: 100%; }
 .cov {
   position: relative; display: block; aspect-ratio: 2 / 3; border-radius: 6px; overflow: hidden; background: var(--bg-2);
-  box-shadow: var(--shadow); transition: transform .2s, box-shadow .2s; border-left: 4px solid var(--c);
+  outline: 1px solid var(--line); transition: transform .2s; border-left: 4px solid var(--c);
 }
 .s-1 { --c: var(--g-1); } .s-2 { --c: var(--g-2); } .s-3 { --c: var(--g-3); } .s-4 { --c: var(--g-4); }
 .s-5 { --c: var(--g-5); } .s-6 { --c: var(--g-6); } .s-7 { --c: var(--g-7); } .s-8 { --c: var(--g-8); }
-.bk:hover .cov { transform: translateY(-3px) rotate(-.5deg); box-shadow: 0 14px 30px -12px rgba(50, 30, 10, .35); }
+.bk:hover .cov { transform: translateY(-3px) rotate(-.5deg); outline-color: var(--line-strong); }
 .cov img { width: 100%; height: 100%; object-fit: cover; }
 .want .cov img { filter: saturate(.55) contrast(.95); opacity: .85; }
-.want .cov { border-left-style: dashed; }
 .dim .cov { opacity: .35; }
 .fallback {
   position: absolute; inset: 0; padding: 12px 10px; display: flex; flex-direction: column; justify-content: space-between;
   background: linear-gradient(160deg, color-mix(in oklab, var(--c) 35%, var(--card)), var(--card));
 }
-.fallback .t { font-family: var(--serif); font-size: 13px; line-height: 1.2; color: var(--ink); }
+.fallback .t { font-family: var(--display); font-weight: 800; text-transform: uppercase; font-size: 12px; line-height: 1.1; color: var(--ink); }
 .fallback .a { font-size: 10px; color: var(--ink-2); }
 .ribbon {
-  position: absolute; top: 8px; right: -22px; transform: rotate(35deg); background: var(--ink); color: var(--bg);
+  position: absolute; top: 8px; right: -22px; transform: rotate(35deg); background: var(--line-strong); color: var(--accent-ink);
   font-size: 9px; letter-spacing: .08em; text-transform: uppercase; padding: 2px 26px; font-weight: 600;
 }
 .stars { position: absolute; left: 6px; bottom: 5px; font-size: 10px; color: #fff; text-shadow: 0 1px 3px rgba(0,0,0,.7); letter-spacing: -.5px; }
