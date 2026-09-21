@@ -5,7 +5,7 @@ export class GoodreadsFeedError extends Error {
   constructor(public code: 'not-rss' | 'empty', message: string) { super(message) }
 }
 
-const parser = new XMLParser({ ignoreAttributes: false, cdataPropName: '__cdata', trimValues: true })
+const parser = new XMLParser({ ignoreAttributes: false, cdataPropName: '__cdata', trimValues: true, parseTagValue: false })
 
 const text = (v: unknown): string => {
   if (v == null) return ''

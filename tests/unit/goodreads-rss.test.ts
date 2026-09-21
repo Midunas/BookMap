@@ -31,6 +31,10 @@ describe('parseRssPage', () => {
   it('handles a last page with one item', () => {
     expect(parseRssPage(short)).toHaveLength(1)
   })
+  it('preserves leading zeros in ISBNs instead of number-coercing them', () => {
+    const items = parseRssPage(page)
+    expect(items[0].isbn).toBe('0061801917')
+  })
   it('throws not-rss for an HTML sign-in page', () => {
     expect(() => parseRssPage(html)).toThrowError(GoodreadsFeedError)
     try { parseRssPage(html) } catch (e) { expect((e as GoodreadsFeedError).code).toBe('not-rss') }
