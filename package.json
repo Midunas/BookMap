@@ -8,10 +8,12 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "test": "vitest run",
-    "test:watch": "vitest"
+    "test": "vitest run --exclude tests/db/**",
+    "test:watch": "vitest",
+    "test:db": "vitest run tests/db"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.116.0",
     "d3": "^7.9.0",
     "fast-xml-parser": "^5.11.1",
     "nuxt": "^4.5.2",
@@ -20,6 +22,7 @@
     "vue-router": "^5.3.1"
   },
   "devDependencies": {
+    "dotenv": "^18.0.2",
     "vitest": "^5.0.1"
   }
 }
